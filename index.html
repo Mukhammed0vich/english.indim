@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids English School</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 100%;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .nav-btn {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .nav-btn i {
+            font-size: 20px;
+            width: 24px;
+            text-align: center;
+        }
+        
+        .content {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            display: none;
+        }
+        
+        .active {
+            display: block;
+        }
+        
+        .teacher-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+        
+        .course-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .contact-btn {
+            background: #667eea;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            margin: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .progress-bar {
+            background: #e9ecef;
+            border-radius: 10px;
+            height: 10px;
+            margin: 10px 0;
+        }
+        
+        .progress-fill {
+            background: #28a745;
+            height: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sarlavha -->
+        <div class="header">
+            <h1>🏫 Kids English School</h1>
+            <p>6-13 yoshli bolalar uchun ingliz tili kurslari</p>
+        </div>
+        
+        <!-- Navigatsiya -->
+        <div class="nav">
+            <a href="#" class="nav-btn" onclick="showSection('home')">
+                <span>🏠</span> Bosh Sahifa
+            </a>
+            <a href="#" class="nav-btn" onclick="showSection('teacher')">
+                <span>👩‍🏫</span> O'qituvchi Haqida
+            </a>
+            <a href="#" class="nav-btn" onclick="showSection('courses')">
+                <span>📚</span> Kurslar Haqida
+            </a>
+            <a href="#" class="nav-btn" onclick="showSection('parents')">
+                <span>👨‍👩‍👧‍👦</span> Ota-Onalar Uchun
+            </a>
+            <a href="#" class="nav-btn" onclick="showSection('contact')">
+                <span>📞</span> Bog'lanish
+            </a>
+        </div>
+        
+        <!-- Kontent Bo'limlari -->
+        
+        <!-- Bosh Sahifa -->
+        <div id="home" class="content active">
+            <h2>🎉 Xush kelibsiz!</h2>
+            <p>Indira Qurbanbayeva ning bolalar uchun ingliz tili kursiga xush kelibsiz!</p>
+            
+            <div style="margin: 20px 0;">
+                <h3>📊 Statistika</h3>
+                <p>✅ 500+ o'quvchi</p>
+                <p>⭐ 5.0 reyting</p>
+                <p>🏆 98% natijadorlik</p>
+            </div>
+            
+            <h3>⚡ Tezkor Kirish</h3>
+            <a href="#" class="contact-btn" onclick="showSection('courses')">Kurslarni Ko'rish</a>
+            <a href="#" class="contact-btn" onclick="showSection('contact')">Bog'lanish</a>
+        </div>
+        
+        <!-- O'qituvchi Haqida -->
+        <div id="teacher" class="content">
+            <div class="teacher-photo">
+                👩‍🏫
+            </div>
+            <h2>Indira Qurbanbayeva</h2>
+            <p><strong>Bolalar uchun ingliz tili o'qituvchisi</strong></p>
+            
+            <div style="margin: 20px 0;">
+                <h3>🎓 Ta'lim va Sertifikatlar</h3>
+                <ul>
+                    <li>Toshkent Davlat Pedagogika Universiteti - Chet tillari fakulteti</li>
+                    <li>CELTA sertifikati - Cambridge University</li>
+                    <li>IELTS 8.5 natija</li>
+                    <li>Bolalar psixologiyasi bo'yicha kurs</li>
+                </ul>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <h3>💼 Tajriba</h3>
+                <ul>
+                    <li>10+ yillik o'qituvchilik tajribasi</li>
+                    <li>6-13 yoshli bolalar bilan ishlash</li>
+                    <li>500+ o'quvchi tayyorlagan</li>
+                    <li>Onlayn va offline darslar</li>
+                </ul>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <h3>🌟 O'qitish Uslubi</h3>
+                <p>O'yinlar, qo'shiqlar, interaktiv topshiriqlar va harakatli darslar orqali ingliz tilini o'rganish!</p>
+            </div>
+        </div>
+        
+        <!-- Kurslar Haqida -->
+        <div id="courses" class="content">
+            <h2>📚 Kurslarimiz</h2>
+            
+            <div class="course-card">
+                <h3>🧸 Starter Course (6-8 yosh)</h3>
+                <p><strong>Davomiylik:</strong> 3 oy</p>
+                <p><strong>Darslar:</strong> Haftada 3 marta, 45 daqiqa</p>
+                <p><strong>Narxi:</strong> 300,000 so'm/oy</p>
+                <p><strong>O'rganiladi:</strong> Asosiy ranglar, sonlar, hayvonlar, oila a'zolari</p>
+            </div>
+            
+            <div class="course-card">
+                <h3>🚀 Beginner Course (9-11 yosh)</h3>
+                <p><strong>Davomiylik:</strong> 6 oy</p>
+                <p><strong>Darslar:</strong> Haftada 3 marta, 60 daqiqa</p>
+                <p><strong>Narxi:</strong> 400,000 so'm/oy</p>
+                <p><strong>O'rganiladi:</strong> Sodda gap tuzish, so'z boyitish, o'qish</p>
+            </div>
+            
+            <div class="course-card">
+                <h3>🎯 Intermediate Course (12-13 yosh)</h3>
+                <p><strong>Davomiylik:</strong> 9 oy</p>
+                <p><strong>Darslar:</strong> Haftada 4 marta, 60 daqiqa</p>
+                <p><strong>Narxi:</strong> 500,000 so'm/oy</p>
+                <p><strong>O'rganiladi:</strong> Murakkab grammatika, erkin muloqot, imtihonga tayyorlov</p>
+            </div>
+            
+            <h3>🎁 Qo'shimcha Imkoniyatlar</h3>
+            <ul>
+                <li>📝 Har oy progress test</li>
+                <li>🏆 Mukofotlar va sertifikatlar</li>
+                <li>👥 Guruh va individual mashg'ulotlar</li>
+                <li>📚 O'quv materiallari bepul</li>
+            </ul>
+        </div>
+        
+        <!-- Ota-Onalar Uchun -->
+        <div id="parents" class="content">
+            <h2>👨‍👩‍👧‍👦 Ota-Onalar Uchun</h2>
+            
+            <div style="margin: 20px 0;">
+                <h3>👀 Progressni Kuzatish</h3>
+                <p>Har oy sizga bolangizning progressi to'g'risida hisobot yuboriladi:</p>
+                <ul>
+                    <li>📊 O'zlashtirish darajasi</li>
+                    <li>⭐ Topshiriqlar bajarilishi</li>
+                    <li>🎯 Test natijalari</li>
+                    <li>💬 O'qituvchi tavsiyalari</li>
+                </ul>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 75%"></div>
+                </div>
+                <p>Hozirgi o'zlashtirish: 75%</p>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <h3>📞 O'qituvchi bilan Aloqa</h3>
+                <p>Bolangizning o'rganish jarayoni haqida har qanday savolingiz bo'lsa:</p>
+                <ul>
+                    <li>💬 Shaxsiy konsultatsiya</li>
+                    <li>📱 Telegram orqali tezkor javob</li>
+                    <li>📞 Telefon orqali muloqot</li>
+                    <li>👥 Ota-onalar uchun yig'ilishlar</li>
+                </ul>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <h3>📅 Darslar Tarixi</h3>
+                <p>Barcha o'tilgan darslar va ularning natijalari:</p>
+                <ul>
+                    <li>✅ Bajarilgan topshiriqlar</li>
+                    <li>📝 Test natijalari</li>
+                    <li>🎥 Dars yozuvlari (mavjud)</li>
+                    <li>📊 O'rtacha ballar</li>
+                </ul>
+            </div>
+            
+            <a href="#" class="contact-btn" onclick="showSection('contact')">Progress So'rovnoma Olish</a>
+        </div>
+        
+        <!-- Bog'lanish -->
+        <div id="contact" class="content">
+            <h2>📞 Bog'lanish</h2>
+            
+            <div style="margin: 20px 0;">
+                <h3>📱 Telegram</h3>
+                <p>Asosiy kanal: <strong>@KidsEnglishUz</strong></p>
+                <p>Shaxsiy: <strong>@IndiraTeacher</strong></p>
+                
+                <a href="https://t.me/IndiraTeacher" class="contact-btn">📩 Xabar Yuborish</a>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <h3>📞 Telefon</h3>
+                <p>+998 90 123 45 67</p>
+                <p>Ish vaqti: 9:00 - 18:00</p>
+                
+                <a href="tel:+998901234567" class="contact-btn">📞 Qo'ng'iroq Qilish</a>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <h3>✍️ Konsultatsiya So'rovnomasi</h3>
+                <p>Bepul konsultatsiya uchun so'rov qoldiring:</p>
+                <a href="https://forms.gle/your-form-link" class="contact-btn">📝 So'rovnoma To'ldirish</a>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <h3>📍 Manzil</h3>
+                <p>Toshkent shahar, Yunusobod tumani</p>
+                <p>Onlayn darslar - butun O'zbekiston bo'ylab!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Telegram Web App ni ishga tushirish
+        let tg = window.Telegram.WebApp;
+        tg.expand();
+        tg.MainButton.setText("Kursga Yozilish").show();
+        
+        // Bo'limlarni ko'rsatish funksiyasi
+        function showSection(sectionId) {
+            // Barcha bo'limlarni yashirish
+            document.querySelectorAll('.content').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Tanlangan bo'limni ko'rsatish
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Asosiy tugmani yangilash
+            if (sectionId === 'courses' || sectionId === 'contact') {
+                tg.MainButton.setText("Kursga Yozilish").show();
+            } else {
+                tg.MainButton.hide();
+            }
+        }
+        
+        // Asosiy tugma bosilganda
+        tg.MainButton.onClick(function() {
+            showSection('contact');
+        });
+        
+        // Dastlabki bo'limni ko'rsatish
+        showSection('home');
+    </script>
+</body>
+</html>
